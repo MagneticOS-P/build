@@ -822,22 +822,53 @@ else if get_stage("%(bcb_dev)s") == "3/3" then
 
   script.AppendExtra("ifelse(is_mounted(\"/system\"), unmount(\"/system\"));")
 
-  android_version = target_info.GetBuildProp("ro.build.version.release")
-  build_id = target_info.GetBuildProp("ro.build.id")
-  build_date = target_info.GetBuildProp("org.pixelexperience.build_date")
-  security_patch = target_info.GetBuildProp("ro.build.version.security_patch")
-  device = target_info.GetBuildProp("ro.product.device")
+   android_version = target_info.GetBuildProp("ro.build.version.release")
+   build_id = target_info.GetBuildProp("ro.build.id")
+   build_date = target_info.GetBuildProp("ros.revolution.build_date")
+   security_patch = target_info.GetBuildProp("ro.build.version.security_patch")
+   device = target_info.GetBuildProp("ro.product.device")
+   dev = target_info.GetBuildProp("ro.build.user")
+   host = target_info.GetBuildProp("ro.build.host")
+   RosVersion = target_info.GetBuildProp("ros.revolution.version")
+   buildType = target_info.GetBuildProp("ros.revolution.build_type")
 
-  script.Print("----------------------------------------------");
-  script.Print("              Pixel Experience");
-  script.Print("               by jhenrique09");
-  script.Print("----------------------------------------------");
-  script.Print(" Android version: %s"%(android_version));
-  script.Print(" Build id: %s"%(build_id));
-  script.Print(" Build date: %s"%(build_date));
-  script.Print(" Security patch: %s"%(security_patch));
+  script.Print("---------------------------------");
+  script.Print("");
+  script.Print("  _____             ____   _____ ");
+  script.Print(" |  __ \           / __ \ / ____|");
+  script.Print(" | |__) |_____   _| |  | | (___  ");
+  script.Print(" |  _  // _ \ \ / | |  | |\___ \ ");
+  script.Print(" | | \ |  __/\ V /| |__| |____) |");
+  script.Print(" |_|  \_\___|_\_/ _\____/|_____/ ");
+  script.Print("     /\   / __ \ / ____|  __ \   ");
+  script.Print("    /  \ | |  | | (___ | |__) |  ");
+  script.Print("   / /\ \| |  | |\___ \|  ___/   ");
+  script.Print("  / ____ | |__| |____) | |       ");
+  script.Print(" /_/    \_\____/|_____/|_|       ");
+  script.Print("");
+  script.Print("---------------------------------");
+  script.Print("");
+  script.Print("---------------------------------------------------");
+  script.Print("");
+  script.Print(" Rom: %s"%(RosVersion));
+  script.Print("");
   script.Print(" Device: %s"%(device));
-  script.Print("----------------------------------------------");
+  script.Print("");
+  script.Print(" Android version: %s"%(android_version));
+  script.Print("");
+  script.Print(" Build id: %s"%(build_id));
+  script.Print("");
+  script.Print(" Build date: %s"%(build_date));
+  script.Print("");
+  script.Print(" Build Type: %s"%(buildType));
+  script.Print("");
+  script.Print(" Security patch: %s"%(security_patch));
+  script.Print("");
+  script.Print(" Developer: %s"%(dev));
+  script.Print("");
+  script.Print(" Host: %s"%(host));
+  script.Print("");
+  script.Print("--------------------------------------------------");
   device_specific.FullOTA_InstallBegin()
 
   CopyInstallTools(output_zip)
