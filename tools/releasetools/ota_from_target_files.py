@@ -827,7 +827,7 @@ else if get_stage("%(bcb_dev)s") == "3/3" then
   build_date = target_info.GetBuildProp("ros.revolution.build_date")
   security_patch = target_info.GetBuildProp("ro.build.version.security_patch")
   device = target_info.GetBuildProp("ro.product.device")
-  dev = target_info.GetBuildProp("ro.build.user")
+  user = target_info.GetBuildProp("ro.build.user")
   host = target_info.GetBuildProp("ro.build.host")
   RosVersion = target_info.GetBuildProp("ros.revolution.version")
   buildType = target_info.GetBuildProp("ros.revolution.build_type")
@@ -850,6 +850,8 @@ else if get_stage("%(bcb_dev)s") == "3/3" then
   script.Print("");
   script.Print("---------------------------------------------------");
   script.Print("");
+  script.Print(" AOSP Dev: Nelo (@nelo360) ");
+  script.Print("");
   script.Print(" Rom: %s"%(RosVersion));
   script.Print("");
   script.Print(" Device: %s"%(device));
@@ -864,9 +866,9 @@ else if get_stage("%(bcb_dev)s") == "3/3" then
   script.Print("");
   script.Print(" Security patch: %s"%(security_patch));
   script.Print("");
-  script.Print(" Developer: %s"%(dev));
+  script.Print(" Builder PC: %s"%(host));
   script.Print("");
-  script.Print(" Host: %s"%(host));
+  script.Print(" Builder User: %s"%(user));
   script.Print("");
   script.Print("--------------------------------------------------");
   device_specific.FullOTA_InstallBegin()
