@@ -868,7 +868,7 @@ else if get_stage("%(bcb_dev)s") == "3/3" then
   script.Print("");
   script.Print(" Builder PC: %s"%(host));
   script.Print("");
-  script.Print(" Builder User: %s"%(user));
+  script.Print(" Maintainer: %s"%(user));
   script.Print("");
   script.Print("--------------------------------------------------");
   device_specific.FullOTA_InstallBegin()
